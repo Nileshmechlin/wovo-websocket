@@ -5,8 +5,8 @@ import { Server } from "socket.io";
 const app = express();
 const server = createServer(app);
 
-// Android Emulator → Laptop Laravel API
-const baseUrl = "http://10.0.2.2:8000/api";
+// Laravel API Base URL
+const baseUrl = process.env.API_BASE_URL || "https://api.wovo.love/api";
 
 const io = new Server(server, {
   cors: {
